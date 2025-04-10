@@ -1,4 +1,4 @@
-// Testing Polling 1
+// Testing Polling
 pipeline {
     agent any
 

@@ -20,7 +20,7 @@ pipeline {
             }
             post {
                 success {
-                    emailext to: 'franco.diazlicham@hotmail.com',
+                    emailext to: 's224899095@deakin.edu.au',
                         subject: "Jekins Pipeline - Unit and Integration Tests SUCCESS: ${currentBuild.fullDisplayName}",
                         body: "The unit and integration tests completed successfully. Please find the logs attached to this email.",
                         attachLog: true, 

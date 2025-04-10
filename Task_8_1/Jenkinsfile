@@ -20,14 +20,14 @@ pipeline {
             }
             post {
                 success {
-                    emailext to: 's224899095@deakin.edu.au',
+                    emailext to: 'smartdevau@gmail.com',
                         subject: "Jekins Pipeline - Unit and Integration Tests SUCCESS: ${currentBuild.fullDisplayName}",
                         body: "The unit and integration tests completed successfully. Please find the logs attached to this email.",
                         attachLog: false, 
                         compressLog: true
                 }
                 failure {
-                    emailext to: 's224899095@deakin.edu.au',
+                    emailext to: 'smartdevau@gmail.com',
                         subject: "Jenkins Pipeline - Unit and Integration Tests FAILURE:${currentBuild.fullDisplayName}",
                         body: "The unit and integration tests failed. Please find the logs attached to this email.",
                         attachLog: false, 
@@ -53,14 +53,14 @@ pipeline {
             }
             post {
                 success {
-                    emailext to: 's224899095@deakin.edu.au',
+                    emailext to: 'smartdevau@gmail.com',
                         subject: "Jenkins Pipeline - Security Scan SUCCESS: ${currentBuild.fullDisplayName}",
                         body: "The security scan completed successfully. Please find the logs attached.",
                         attachLog: false, 
                         compressLog: true
                 }
                 failure {
-                    emailext to: 's224899095@deakin.edu.au',
+                    emailext to: 'smartdevau@gmail.com',
                         subject: "Jenkins Pipeline - Security Scan FAILURE: ${currentBuild.fullDisplayName}",
                         body: "The security scan failed. Please find the logs attached.",
                         attachLog: false, 
@@ -85,14 +85,14 @@ pipeline {
             }
             post {
                 success {
-                    emailext to: 's224899095@deakin.edu.au',
+                    emailext to: 'smartdevau@gmail.com',
                         subject: "Jenkins Pipeline - Integration Tests on Staging SUCCESS: ${currentBuild.fullDisplayName}",
                         body: "Integration tests on staging completed successfully. Please find the logs attached.",
                         attachLog: false, 
                         compressLog: true
                 }
                 failure {
-                    emailext to: 's224899095@deakin.edu.au',
+                    emailext to: 'smartdevau@gmail.com',
                         subject: "Jenkins Pipeline - Integration Tests on Staging FAILURE: ${currentBuild.fullDisplayName}",
                         body: "Integration tests on staging failed. Please find the logs attached.",
                         attachLog: false, 
@@ -113,7 +113,7 @@ pipeline {
     post {
         always {
             echo 'Sending final email notification...'
-            emailext to: 's224899095@deakin.edu.au',
+            emailext to: 'smartdevau@gmail.com',
                 subject: "Jenkins Pipeline finished: ${currentBuild.fullDisplayName}",
                 body: "Check console output at ${env:BUILD_URL}"
         }

@@ -1,0 +1,63 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Running Maven..."
+                echo "Building Code..."
+                sleep 5
+                echo "Maven build completed successfully..."
+            }
+        }
+
+        stage('Unit and Integration Tests') {
+            steps {
+                echo 'Running unit and integration tests...'
+                sleep 5
+                echo 'Simulation: mvn test...'
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                echo 'SonarQube initialisation...'
+                echo 'Analyzing code quality...'
+                sleep 5
+                echo 'SonarQube: Code analysis complete with no bugs...'
+            }
+        }
+
+        stage('Security Scan') {
+            steps {
+                echo 'Performing security scan with OWASP dependency check...'
+                sleep 5
+                echo 'OWASP: Codebase ave no active vulnerabilities...'
+            }
+        }
+
+        stage('Deploy to Staging') {
+            steps {
+                echo 'Deploying to staging environment...'
+                sleep 5
+                echo 'Simulation: deployment to AWS EC2 Staging instance...'
+            }
+        }
+
+        stage('Integration Tests on Staging') {
+            steps {
+                echo 'Running integration tests on the staging environment...'
+                sleep 5
+                echo 'Simulation: integration tests on staging server...'
+            }
+        }
+
+        stage('Deploy to Production') {
+            steps {
+                echo 'Deploying to production environment using Kubernetes...'
+                sleep 5
+                echo 'Production deployment completed successfully...'
+            }
+        }
+    }
+}
